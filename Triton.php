@@ -21,4 +21,9 @@ class Triton
         $this->variables[$name] = $value;
     }
 
+    function __debugInfo()
+    {
+        return $this->variables;
+    }
+
 }
