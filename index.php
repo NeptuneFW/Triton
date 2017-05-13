@@ -16,6 +16,7 @@ foreach (glob('./*') as  $value)
 
 $user = new UserModel();
 $user->name = "Emirhan";
-$user->surname = "Engin";
+$user->surname = " Engin";
 echo $user->name;
 echo $user->surname;
+var_dump($user);
