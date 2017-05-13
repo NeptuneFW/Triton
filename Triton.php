@@ -21,6 +21,14 @@ class Triton
         $this->variables[$name] = $value;
     }
 
+    function __toString()
+    {
+        foreach ($this->variables as $key => $value)
+        {
+
+        }
+    }
+
     function __debugInfo()
     {
         return $this->variables;
