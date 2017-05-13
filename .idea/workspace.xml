@@ -30,7 +30,7 @@
       <file leaf-file-name="Triton.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Triton.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
+            <state relative-caret-position="125">
               <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
               <folding />
             </state>
@@ -192,7 +192,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494712380652</updated>
-      <workItem from="1494712381988" duration="892000" />
+      <workItem from="1494712381988" duration="913000" />
     </task>
     <task id="LOCAL-00001" summary="Development">
       <created>1494712838179</created>
@@ -215,11 +215,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494713204360</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Development">
+      <created>1494713289198</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1494713289198</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="892000" />
+    <option name="totallyTimeSpent" value="913000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -302,7 +309,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Triton.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
+        <state relative-caret-position="125">
           <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
           <folding />
         </state>

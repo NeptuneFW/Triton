@@ -1,14 +1,8 @@
 <?php
-
-/**
- * Created by PhpStorm.
- * User: Peker
- * Date: 14.05.2017
- * Time: 01:03
- */
 class Triton
 {
 
+<<<<<<< HEAD
     public function __get($name)
     {
         // TODO: Implement __get() method.
@@ -20,3 +14,6 @@ class Triton
     }
 
 }
+=======
+}
+>>>>>>> a403263b64f47a10f42e59dafded91fcfa735a4b
