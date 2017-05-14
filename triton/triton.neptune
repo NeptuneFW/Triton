@@ -20,14 +20,44 @@ function readlineTriton($prompt = null)
 if($argv[1] == '--migration:create')
 {
     $database = isset($argv[2]) ? $argv[2] : die('Database is null!');
-    $table = isset($argv[3]) ? $argv[3] : die('Table is null!');
+    $tableName = isset($argv[3]) ? $argv[3] : die('Table is null!');
     $prefix = '../';
     require $prefix . $configs['databases'];
-    require $prefix . $configs['migrations'] . '/'. $database . '/' . $table . '.php';
+    require $prefix . $configs['migrations'] . '/'. $database . '/' . $tableName . '.php';
 
-    $table = @call_user_func_array([$configs['migrationsNamespace'] . '\\' . ucfirst($table), 'table'], [new \TritonTable()]);
-    var_dump($table);
-
+    $table = @call_user_func_array([$configs['migrationsNamespace'] . '\\' . ucfirst($tableName), 'table'], [new \TritonTable()]);
+    switch ($databases[$database]['driver']) {
+        case 'mysql' :
+        $sqlString = 'CREATE TABLE IF NOT EXISTS ' . $tableName . ' ( ' . "\r\n";
+        $sqlStringEnd = '';
+        foreach ($table->variables as $typeKey => $typeValue)
+        {
+            foreach ($typeValue as $columnKey => $columnValue) {
+                if (!empty($columnValue['length'])) {
+                    $sqlString .= $columnValue['name'] . ' ' . $typeKey . '(' . $columnValue['length'] . ') ';
+                } else {
+                    $sqlString .= $columnValue['name'] . ' ' . $typeKey . ' ';
+                }
+                if (isset($columnValue['class']) && is_object($columnValue['class'])) {
+                    foreach ($columnValue['class']->properties as $propkey => $propValue) {
+                        $sqlString .= ' ' . $propValue . ' ';
+                    }
+                    foreach ($columnValue['class']->sqlEnd as $sqlEndValue) {
+                        $sqlStringEnd .= ', ' . $sqlEndValue . ' ';
+                    }
+                }
+                $sqlString .= ', ';
+            }
+        }
+        $sqlString = rtrim($sqlString, ', ');
+        $sqlStringEnd .= ')';
+        foreach ($table->sqlEnd as $sqlEndValue) {
+            $sqlStringEnd .= ' ' . $sqlEndValue . ' ';
+        }
+        $sqlString .= $sqlStringEnd;
+        (new PDO('mysql:host=' . $databases[$database]['host'] . ';dbname=' . $database . ';charset='. $databases[$database]['charset'], $databases[$database]['user'], $databases[$database]['pass']))->exec($sqlString);
+        break;
+    }
 }
 else
 {

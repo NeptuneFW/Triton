@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="563334f5-5bdc-4a66-a330-9fb2f81f3794" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/migration/ntuser/User.php" afterPath="$PROJECT_DIR$/data/migration/ntuser/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/triton/config/config.triton.php" afterPath="$PROJECT_DIR$/triton/config/config.triton.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/triton/triton.neptune" afterPath="$PROJECT_DIR$/triton/triton.neptune" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/triton/triton/TritonColumn.php" afterPath="$PROJECT_DIR$/triton/triton/TritonColumn.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/triton/triton/TritonTable.php" afterPath="$PROJECT_DIR$/triton/triton/TritonTable.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,9 +31,12 @@
       <file leaf-file-name="triton.neptune" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/triton/triton.neptune">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="522">
+              <caret line="57" column="195" lean-forward="false" selection-start-line="57" selection-start-column="195" selection-end-line="57" selection-end-column="195" />
+              <folding>
+                <marker date="1494780937092" expanded="true" signature="934:946" ph="CREATE TABLE... IF" />
+                <marker date="1494780937092" expanded="true" signature="934:981" ph="CREATE TABLE... IF" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,7 +44,7 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/migration/ntuser/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
+            <state relative-caret-position="58">
               <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
               <folding />
             </state>
@@ -77,16 +76,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="174">
               <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="databases.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/databases.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -358,7 +347,7 @@
       <updated>1494712380652</updated>
       <workItem from="1494712381988" duration="2652000" />
       <workItem from="1494763348012" duration="396000" />
-      <workItem from="1494772649290" duration="6732000" />
+      <workItem from="1494772649290" duration="8073000" />
     </task>
     <task id="LOCAL-00001" summary="Development">
       <created>1494712838179</created>
@@ -521,11 +510,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494778680298</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Development">
+      <created>1494779601837</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1494779601837</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9780000" />
+    <option name="totallyTimeSpent" value="11121000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -721,14 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/triton/triton/TritonColumn.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -741,22 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/databases.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/triton/config/config.triton.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -779,17 +751,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/migration/ntuser/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
+        <state relative-caret-position="58">
           <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/databases.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/triton/config/config.triton.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/triton/triton.neptune">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="522">
+          <caret line="57" column="195" lean-forward="false" selection-start-line="57" selection-start-column="195" selection-end-line="57" selection-end-column="195" />
+          <folding>
+            <marker date="1494780937092" expanded="true" signature="934:946" ph="CREATE TABLE... IF" />
+            <marker date="1494780937092" expanded="true" signature="934:981" ph="CREATE TABLE... IF" />
+          </folding>
         </state>
       </provider>
     </entry>
