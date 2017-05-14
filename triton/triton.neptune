@@ -3,6 +3,9 @@
 //#!/usr/bin/env php
 
 require 'config/config.triton.php';
+require 'triton/tritonmigration.php';
+require 'triton/tritontable.php';
+require 'triton/tritoncolumn.php';
 
 function readlineTriton($prompt = null)
 {
@@ -18,10 +21,12 @@ if($argv[1] == '--migration:create')
 {
     $database = isset($argv[2]) ? $argv[2] : die('Database is null!');
     $table = isset($argv[3]) ? $argv[3] : die('Table is null!');
-    require $configs['databases'];
-    require $configs['migrations'] . '/'. $database . '/' . $table;
+    $prefix = '../';
+    require $prefix . $configs['databases'];
+    require $prefix . $configs['migrations'] . '/'. $database . '/' . $table . '.php';
 
-
+    $table = @call_user_func_array([$configs['migrationsNamespace'] . '\\' . ucfirst($table), 'table'], [new \TritonTable()]);
+    var_dump($table);
 
 }
 else

@@ -1,7 +1,4 @@
 <?php
-namespace Triton;
-
-use Triton\TritonTableColumn;
 
 class TritonTable
 {

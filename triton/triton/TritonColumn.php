@@ -1,6 +1,6 @@
 <?php
 
-class TritonTableColumn
+class TritonColumn
 {
     public $name,
         $length,

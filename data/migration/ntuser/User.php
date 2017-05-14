@@ -3,7 +3,7 @@
 namespace Data\Migration;
 use Data\Model\User as UserModel;
 
-class User extends TritonMigration
+class User extends \TritonMigration
 {
 
     public function table($table)
