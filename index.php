@@ -1,6 +1,10 @@
 <?php
+foreach (glob('./triton/triton/*') as  $value)
+{
+    require_once $value;
+}
 
-foreach (glob('./*') as  $value)
+foreach (glob('./data/model/*') as  $value)
 {
     if($value !== 'index.php')
     {
