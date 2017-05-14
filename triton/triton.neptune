@@ -6,6 +6,7 @@ require 'config/config.triton.php';
 require 'triton/tritonmigration.php';
 require 'triton/tritontable.php';
 require 'triton/tritoncolumn.php';
+require 'triton/triton.php';
 
 function readlineTriton($prompt = null)
 {
@@ -56,8 +57,15 @@ if($argv[1] == '--migration:create')
         }
         $sqlString .= $sqlStringEnd;
         (new PDO('mysql:host=' . $databases[$database]['host'] . ';dbname=' . $database . ';charset='. $databases[$database]['charset'], $databases[$database]['user'], $databases[$database]['pass']))->exec($sqlString);
+        echo $sqlString;
         break;
     }
+    foreach (glob('../' . $configs['models'] . '/*') as $model)
+    {
+        require_once $model;
+    }
+    @call_user_func([$configs['migrationsNamespace'] . '\\' . ucfirst($tableName), 'up']);
+
 }
 else
 {
