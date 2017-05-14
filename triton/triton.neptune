@@ -2,6 +2,7 @@
 //#!/usr/bin/php
 //#!/usr/bin/env php
 
+require 'config/config.triton.php';
 
 function readlineTriton($prompt = null)
 {
@@ -13,8 +14,14 @@ function readlineTriton($prompt = null)
     $line = rtrim(fgets($fp, 1024));
     return $line;
 }
-if($argv[1] == 'migration:create')
+if($argv[1] == '--migration:create')
 {
+    $database = isset($argv[2]) ? $argv[2] : die('Database is null!');
+    $table = isset($argv[3]) ? $argv[3] : die('Table is null!');
+    require $configs['databases'];
+    require $configs['migrations'] . '/'. $database . '/' . $table;
+
+
 
 }
 else
