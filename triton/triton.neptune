@@ -13,7 +13,10 @@ function readlineTriton($prompt = null)
     $line = rtrim(fgets($fp, 1024));
     return $line;
 }
-if($argv[1] == 'migration:create ')
+if($argv[1] == 'migration:create')
+{
+
+}
 else
 {
     echo '"'. $argv[1] .'" isn\'t recognized.';
