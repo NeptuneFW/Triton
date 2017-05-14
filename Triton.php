@@ -23,10 +23,12 @@ class Triton
 
     function __toString()
     {
+        $str = '';
         foreach ($this->variables as $key => $value)
         {
-
+            $str .= $key . ' = ' . $value . " <br/> \r\n";
         }
+        return $str;
     }
 
     function __debugInfo()
