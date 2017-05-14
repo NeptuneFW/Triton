@@ -1,4 +1,7 @@
 <?php
+
+use Data\Model\User;
+
 foreach (glob('./triton/triton/*') as  $value)
 {
     require_once $value;
