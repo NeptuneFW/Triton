@@ -8,7 +8,7 @@ foreach (glob('./*') as  $value)
     }
 }
 
-$user = new UserModel();
+$user = new User();
 $user->name = "Emirhan";
 $user->surname = " Engin";
 echo $user;
