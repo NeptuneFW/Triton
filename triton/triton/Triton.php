@@ -36,4 +36,17 @@ class Triton
         return $this->variables;
     }
 
+    public function add()
+    {
+        $callType = debug_backtrace()[0]['type'] == '::';
+        if($callType == '::')
+        {
+
+        }
+        else
+        {
+            var_dump($this);
+        }
+    }
+
 }

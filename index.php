@@ -2,6 +2,8 @@
 
 use Data\Model\User;
 
+require "triton/config/start.triton.php";
+
 foreach (glob('./triton/triton/*') as  $value)
 {
     require_once $value;
