@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="563334f5-5bdc-4a66-a330-9fb2f81f3794" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/migration/ntblog/User.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +20,8 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/migration/ntuser/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+            <state relative-caret-position="254">
+              <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -107,7 +106,6 @@
         <option value="$PROJECT_DIR$/triton/triton/TritonMigration.php" />
         <option value="$PROJECT_DIR$/triton/triton/TritonColumn.php" />
         <option value="$PROJECT_DIR$/triton/triton/TritonTable.php" />
-        <option value="$PROJECT_DIR$/data/migration/ntuser/User.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/triton/triton.neptune" />
         <option value="$PROJECT_DIR$/triton/config/config.triton.php" />
@@ -115,6 +113,7 @@
         <option value="$PROJECT_DIR$/triton/triton/Triton.php" />
         <option value="$PROJECT_DIR$/data/migration/ntblog/User.php" />
         <option value="$PROJECT_DIR$/data/model/User.php" />
+        <option value="$PROJECT_DIR$/data/migration/ntuser/User.php" />
       </list>
     </option>
   </component>
@@ -363,7 +362,7 @@
       <workItem from="1494864811394" duration="1940000" />
       <workItem from="1494868172957" duration="456000" />
       <workItem from="1494869160337" duration="6256000" />
-      <workItem from="1494948455221" duration="7308000" />
+      <workItem from="1494948455221" duration="7358000" />
     </task>
     <task id="LOCAL-00001" summary="Development">
       <created>1494712838179</created>
@@ -575,11 +574,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494957501261</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Development">
+      <created>1494957938692</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1494957938692</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29231000" />
+    <option name="totallyTimeSpent" value="29281000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1083,8 +1089,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/migration/ntuser/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        <state relative-caret-position="254">
+          <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
           <folding />
         </state>
       </provider>
