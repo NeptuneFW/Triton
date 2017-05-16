@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="563334f5-5bdc-4a66-a330-9fb2f81f3794" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/migration/ntblog/User.php" afterPath="$PROJECT_DIR$/data/migration/ntblog/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/model/User.php" afterPath="$PROJECT_DIR$/data/model/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/triton/config/start.triton.php" afterPath="$PROJECT_DIR$/triton/config/start.triton.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/triton/triton/Triton.php" afterPath="$PROJECT_DIR$/triton/triton/Triton.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/data/model/User.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="464">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+              <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -376,7 +373,7 @@
       <workItem from="1494864811394" duration="1940000" />
       <workItem from="1494868172957" duration="456000" />
       <workItem from="1494869160337" duration="6256000" />
-      <workItem from="1494948455221" duration="6771000" />
+      <workItem from="1494948455221" duration="6872000" />
     </task>
     <task id="LOCAL-00001" summary="Development">
       <created>1494712838179</created>
@@ -574,11 +571,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494875119014</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Development">
+      <created>1494957405480</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1494957405480</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28694000" />
+    <option name="totallyTimeSpent" value="28795000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1082,7 +1086,7 @@
     <entry file="file://$PROJECT_DIR$/data/model/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding />
         </state>
       </provider>
