@@ -19,8 +19,10 @@ class User extends \TritonMigration
 
     public function up()
     {
-        UserModel::add(['name' => 'Mehmet Ali', 'surname' => 'Peker', 'rank' => '1', 'deleted' => 0]);
-        UserModel::add(['name' => 'Emirhan', 'surname' => 'Engin', 'rank' => '1', 'deleted' => 0]);
+        $user = new UserModel();
+        $user->add(['name' => 'Mehmet Ali', 'surname' => 'Peker', 'rank' => 1, 'deleted' => 0]);
+        $user->add(['name' => 'Emirhan', 'surname' => 'Engin', 'rank' => 1, 'deleted' => 0]);
+        $user->save();
     }
 
 }
