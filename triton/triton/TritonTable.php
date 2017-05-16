@@ -8,7 +8,7 @@ class TritonTable
         'DEFAULT CHARSET utf8 DEFAULT COLLATE utf8_general_ci'
     ];
 
-    public function increments($str, $length = 13)
+    public function increments($str, $length = 11)
     {
         if(is_object($str))
         {
