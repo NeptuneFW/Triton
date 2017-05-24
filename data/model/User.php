@@ -5,7 +5,7 @@ namespace Data\Model;
 class User extends \Triton
 {
     protected static
-        $db = 'ntuser',
+        $db = 'naber',
         $table = 'user';
     /*
     public function forBuild()

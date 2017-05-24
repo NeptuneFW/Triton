@@ -2,8 +2,9 @@
 
 use Data\Model\User;
 
-require "triton/config/start.triton.php";
+define('TRITON_ROOT', __DIR__ . '/triton');
 
+require "triton/config/start.triton.php";
 foreach (glob('./triton/triton/*') as  $value)
 {
     require_once $value;
@@ -17,7 +18,5 @@ foreach (glob('./data/model/*') as  $value)
     }
 }
 
-$user = new User();
-$user->name = "Emirhan";
-$user->surname = " Engin";
-echo $user;
+$user = User::all();
+echo $user->name[0];
