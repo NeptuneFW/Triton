@@ -1,6 +1,6 @@
 <?php
 
-use Data\Model\User;
+use Data\Model\Users;
 
 define('TRITON_ROOT', __DIR__ . '/triton');
 
@@ -18,5 +18,15 @@ foreach (glob('./data/model/*') as  $value)
     }
 }
 
-$user = User::all();
-echo $user->name[0];
+$users = Users::all('*')->getData();
+
+var_dump($users);
+
+
+foreach ($users as $user)
+{
+    foreach($user->articles as $article)
+    {
+        var_dump($article);
+    }
+}

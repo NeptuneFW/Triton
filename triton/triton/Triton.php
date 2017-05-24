@@ -24,13 +24,19 @@ class Triton
 
     public function __get($name)
     {
-        $GLOBALS['result'] = [];
-        $GLOBALS['name'] = $name;
-        array_map(function($object){
-            $name = $GLOBALS['name'];
-            $GLOBALS['result'][] = $object->$name;
-        }, $this->variables['data']);
-        return $GLOBALS['result'];
+        if(method_exists($this, $name)) {
+            return $this->$name();
+        }
+        else
+        {
+            $GLOBALS['result'] = [];
+            $GLOBALS['name'] = $name;
+            array_map(function($object){
+                $name = $GLOBALS['name'];
+                $GLOBALS['result'][] = $object->$name;
+            }, $this->variables['data']);
+            return $GLOBALS['result'];
+        }
     }
 
     public function __set($name, $value)
@@ -67,7 +73,7 @@ class Triton
                     require $file;
                 }
                 $model = new $called_class;
-                $model->setType('object');
+                $model->setType($type);
                 $model->setData(json_decode($triton['all'][$file_name]));
                 return $model;
             }
@@ -75,14 +81,18 @@ class Triton
             {
                 $db = self::connectDatabase(static::$db);
                 $select = $db->query('SELECT ' . $columns . ' FROM ' . static::$table);
+                $result = ($type == 'object') ? $select->fetchAll(PDO::FETCH_CLASS, "\\Triton") : $select->fetchAll(PDO::FETCH_ASSOC);
+                file_put_contents($file, '<?php $triton[\'all\'][\''. $file_name .'\'] = \'' . json_encode($result) . '\';');
                 if($type == 'object')
                 {
-                    $result = $select->fetchAll(PDO::FETCH_OBJ);
                     $model = new $called_class;
-                    $model->setType('object');
+                    $model->setType($type);
                     $model->setData($result);
-                    file_put_contents($file, '<?php $triton[\'all\'][\''. $file_name .'\'] = \'' . json_encode($result) . '\';');
                     return $model;
+                }
+                else
+                {
+                    return  $result;
                 }
             }
         }
@@ -90,15 +100,18 @@ class Triton
         {
             $db = self::connectDatabase(static::$db);
             $select = $db->query('SELECT ' . $columns . ' FROM ' . static::$table);
+            $result = ($type == 'object') ? $select->fetchAll(PDO::FETCH_OBJ) : $select->fetchAll(PDO::FETCH_ASSOC);
+            file_put_contents($file, '<?php $triton[\'all\'][\''. $file_name .'\'] = \'' . json_encode($result) . '\';');
             if($type == 'object')
             {
-                $result = $select->fetchAll(PDO::FETCH_OBJ);
-                var_dump($result);
-                var_dump(json_encode($result));
                 $model = new $called_class;
-                $model->setType('object');
+                $model->setType($type);
                 $model->setData($result);
-                file_put_contents($file, '<?php $triton[\'all\'][\''. $file_name .'\'] = \'' . json_encode($result) . '\';');
+                return $model;
+            }
+            else
+            {
+                return  $result;
             }
         }
     }
@@ -115,7 +128,9 @@ class Triton
     }
 
     public function __destruct()
-    {   /*
+    {
+        $GLOBALS['_neptune']['databases'] = null;
+        /*
         if (empty($GLOBALS['_neptune']['databases']))
         {
             require __DIR__ . '/../config/start.triton.php';
@@ -133,6 +148,11 @@ class Triton
             return $GLOBALS['_neptune']['databases'][static::$db]->lastInsertId();
         }
         */
+    }
+
+    public function getData()
+    {
+        return $this->variables['data'];
     }
 
     private static function connectDatabase($dbname)
