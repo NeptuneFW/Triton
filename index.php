@@ -20,13 +20,8 @@ foreach (glob('./data/model/*') as  $value)
 
 $users = Users::all('*')->getData();
 
-var_dump($users);
-
 
 foreach ($users as $user)
 {
-    foreach($user->articles as $article)
-    {
-        var_dump($article);
-    }
+    var_dump($user);
 }
