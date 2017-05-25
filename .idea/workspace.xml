@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="563334f5-5bdc-4a66-a330-9fb2f81f3794" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/Triton.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/blade.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/triton/triton/Triton.php" afterPath="$PROJECT_DIR$/triton/triton/Triton.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/triton/temp/c058d9abe67382510bc6a0a3fe1e44f7.php" afterPath="$PROJECT_DIR$/triton/temp/c058d9abe67382510bc6a0a3fe1e44f7.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/triton/triton/TritonWhere.php" afterPath="$PROJECT_DIR$/triton/triton/TritonWhere.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,38 +19,38 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Triton.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Triton.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/triton/triton/Triton.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="365">
+              <caret line="46" column="22" lean-forward="false" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
               <folding>
                 <element signature="n#setType#0;n#Triton#0;n#!!top" expanded="false" />
                 <element signature="n#setData#0;n#Triton#0;n#!!top" expanded="false" />
                 <element signature="n#setRelation#0;n#Triton#0;n#!!top" expanded="false" />
-                <element signature="n#where#0;n#Triton#0;n#!!top" expanded="false" />
                 <element signature="n#__set#0;n#Triton#0;n#!!top" expanded="false" />
                 <element signature="n#__toString#0;n#Triton#0;n#!!top" expanded="false" />
                 <element signature="n#__debugInfo#0;n#Triton#0;n#!!top" expanded="false" />
-                <element signature="n#all#0;n#Triton#0;n#!!top" expanded="false" />
                 <element signature="n#add#0;n#Triton#0;n#!!top" expanded="false" />
                 <element signature="n#save#0;n#Triton#0;n#!!top" expanded="false" />
                 <element signature="n#__destruct#0;n#Triton#0;n#!!top" expanded="false" />
                 <element signature="n#getData#0;n#Triton#0;n#!!top" expanded="false" />
                 <element signature="n#connectDatabase#0;n#Triton#0;n#!!top" expanded="false" />
-                <marker date="1495737815626" expanded="false" signature="458:716" ph="{...}" />
-                <marker date="1495737815626" expanded="true" signature="5302:5341" ph="INSERT INTO ${static::$table}... " />
+                <marker date="1495740657320" expanded="false" signature="458:716" ph="{...}" />
+                <marker date="1495740657320" expanded="true" signature="5578:5617" ph="INSERT INTO ${static::$table}... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TritonWhere.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TritonWhere.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/triton/triton/TritonWhere.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-2283">
+              <caret line="22" column="71" lean-forward="false" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
+              <folding>
+                <marker date="1495740783124" expanded="true" signature="3068:3144" ph="SELECT * FRO... categories" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,6 +93,7 @@
       <find>id(</find>
       <find>__GET</find>
       <find>setType</find>
+      <find>all(</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,9 +125,9 @@
         <option value="$PROJECT_DIR$/data/model/Articles.php" />
         <option value="$PROJECT_DIR$/data/model/Article.php" />
         <option value="$PROJECT_DIR$/data/model/User.php" />
-        <option value="$PROJECT_DIR$/triton/triton/TritonWhere.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/triton/triton/Triton.php" />
+        <option value="$PROJECT_DIR$/triton/triton/TritonWhere.php" />
       </list>
     </option>
   </component>
@@ -208,6 +205,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="triton" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Triton" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Triton" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="triton" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="temp" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -395,7 +410,7 @@
       <workItem from="1495620120446" duration="714000" />
       <workItem from="1495641116727" duration="2000" />
       <workItem from="1495642751278" duration="8705000" />
-      <workItem from="1495728337492" duration="8794000" />
+      <workItem from="1495728337492" duration="11716000" />
     </task>
     <task id="LOCAL-00001" summary="Development">
       <created>1494712838179</created>
@@ -698,11 +713,25 @@
       <option name="project" value="LOCAL" />
       <updated>1495736505924</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Development">
+      <created>1495737827256</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1495737827256</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Development">
+      <created>1495740699671</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1495740699671</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63169000" />
+    <option name="totallyTimeSpent" value="66091000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -774,21 +803,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/triton/config/config.triton.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/triton/triton/TritonTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/triton/triton/TritonColumn.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -1106,18 +1120,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/triton/triton/TritonWhere.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/model/Article.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/triton/temp/3c4bf6f9133fbc7d02926e4711d66de3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/triton/temp/bf1bb9b6512e0b5913dab08579541256.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1140,24 +1162,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/triton/triton/Triton.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="365">
+          <caret line="46" column="22" lean-forward="false" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
           <folding>
             <element signature="n#setType#0;n#Triton#0;n#!!top" expanded="false" />
             <element signature="n#setData#0;n#Triton#0;n#!!top" expanded="false" />
             <element signature="n#setRelation#0;n#Triton#0;n#!!top" expanded="false" />
-            <element signature="n#where#0;n#Triton#0;n#!!top" expanded="false" />
             <element signature="n#__set#0;n#Triton#0;n#!!top" expanded="false" />
             <element signature="n#__toString#0;n#Triton#0;n#!!top" expanded="false" />
             <element signature="n#__debugInfo#0;n#Triton#0;n#!!top" expanded="false" />
-            <element signature="n#all#0;n#Triton#0;n#!!top" expanded="false" />
             <element signature="n#add#0;n#Triton#0;n#!!top" expanded="false" />
             <element signature="n#save#0;n#Triton#0;n#!!top" expanded="false" />
             <element signature="n#__destruct#0;n#Triton#0;n#!!top" expanded="false" />
             <element signature="n#getData#0;n#Triton#0;n#!!top" expanded="false" />
             <element signature="n#connectDatabase#0;n#Triton#0;n#!!top" expanded="false" />
-            <marker date="1495737815626" expanded="false" signature="458:716" ph="{...}" />
-            <marker date="1495737815626" expanded="true" signature="5302:5341" ph="INSERT INTO ${static::$table}... " />
+            <marker date="1495740657320" expanded="false" signature="458:716" ph="{...}" />
+            <marker date="1495740657320" expanded="true" signature="5578:5617" ph="INSERT INTO ${static::$table}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/triton/triton/TritonWhere.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2283">
+          <caret line="22" column="71" lean-forward="false" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
+          <folding>
+            <marker date="1495740783124" expanded="true" signature="3068:3144" ph="SELECT * FRO... categories" />
           </folding>
         </state>
       </provider>
