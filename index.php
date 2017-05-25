@@ -24,6 +24,6 @@ foreach ($users as $user)
 {
     foreach ($user->articles as $article)
     {
-
+        var_dump($article);
     }
 }

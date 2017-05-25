@@ -41,9 +41,9 @@ class Triton
     {
         $reflection =  new \ReflectionClass($class);
         $classShort = strtolower($reflection->getShortName());
-        $id = $this->id;
+        $id = self::$id;
         $class = get_called_class();
-        $class::where($classShort . '_id', $this->$id);
+        $class::where($classShort . '_id', $this->relation->variables['data'][$id]);
         return $class;
     }
 
@@ -60,11 +60,18 @@ class Triton
         else
         {
             $GLOBALS['result'] = [];
-            $GLOBALS['name'] = $name;
-            array_map(function($object){
-                $name = $GLOBALS['name'];
-                $GLOBALS['result'][] = $object->$name;
-            }, $this->variables['data']);
+            if($this->variables['type'] == 'multi')
+            {
+                $GLOBALS['name'] = $name;
+                array_map(function($object){
+                    $name = $GLOBALS['name'];
+                    $GLOBALS['result'][] = $object->$name;
+                }, $this->variables['data']);
+            }
+            else if ($this->variables['type'] == 'single')
+            {
+                $GLOBALS['result'] = $this->variables['data'][$name];
+            }
             return $GLOBALS['result'];
         }
     }
@@ -103,7 +110,7 @@ class Triton
                     require $file;
                 }
                 $model = new $called_class;
-                $model->setType($type);
+                $model->setType('multi');
                 $model->setData(json_decode($triton['all'][$file_name]));
                 return $model;
             }
@@ -116,7 +123,7 @@ class Triton
                 if($type == 'object')
                 {
                     $model = new $called_class;
-                    $model->setType($type);
+                    $model->setType('multi');
                     $model->setData($result);
                     return $model;
                 }
@@ -135,7 +142,7 @@ class Triton
             if($type == 'object')
             {
                 $model = new $called_class;
-                $model->setType($type);
+                $model->setType('multi');
                 $model->setData($result);
                 return $model;
             }
