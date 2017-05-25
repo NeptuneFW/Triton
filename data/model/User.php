@@ -2,14 +2,14 @@
 
 namespace Data\Model;
 
-class Users extends \Triton
+class User extends \Triton
 {
     protected static
         $db = 'ntuser',
-        $table = 'users';
+        $table = 'user';
 
     public function articles()
     {
-        return $this->hasMany('Data\Model\Articles');
+        return $this->hasMany('Data\Model\Article');
     }
 }

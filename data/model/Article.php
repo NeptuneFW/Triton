@@ -8,14 +8,14 @@
 
 namespace Data\Model;
 
-class Posts extends \Triton
+class Article extends \Triton
 {
     protected static
         $db = 'ntblog',
-        $table = 'articles';
+        $table = 'article';
 
-    public function users()
+    public function user()
     {
-        return $this->belongsTo('Data\Model\Users');
+        return $this->belongsTo('Data\Model\User');
     }
 }

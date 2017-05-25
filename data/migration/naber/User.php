@@ -1,7 +1,7 @@
 <?php
 
 namespace Data\Migration;
-use Data\Model\User as UserModel;
+use Data\Model\Users as UserModel;
 
 class User extends \TritonMigration
 {
