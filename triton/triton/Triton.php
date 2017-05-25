@@ -43,19 +43,25 @@ class Triton
         $classShort = strtolower($reflection->getShortName());
         $id = self::$id;
         $class = get_called_class();
-        $class::where($classShort . '_id', $this->relation->variables['data'][$id]);
-        return $class;
+        $result = $class::where($classShort . '_id', $this->relation->variables['data'][$id])->execute();
+        return $result;
     }
 
-    public static function where($column, $value, $mark)
+    public static function where($column, $value, $mark = '=')
     {
-        $class = new TritonWhere();
+        $class = new TritonWhere(self::class);
+        $class->data['first'] = [$column, $value, $mark];
+        $class->database = static::$db;
+        $class->table = static::$table;
+        $class->called = get_called_class();
+        return $class;
     }
 
     public function __get($name)
     {
         if(method_exists($this, $name)) {
             var_dump($this->$name());
+            return $this->$name();
         }
         else
         {
@@ -111,7 +117,7 @@ class Triton
                 }
                 $model = new $called_class;
                 $model->setType('multi');
-                $model->setData(json_decode($triton['all'][$file_name]));
+                $model->setData(unserialize($triton['all'][$file_name]));
                 return $model;
             }
             else
@@ -119,7 +125,7 @@ class Triton
                 $db = self::connectDatabase(static::$db);
                 $select = $db->query('SELECT ' . $columns . ' FROM ' . static::$table);
                 $result = ($type == 'object') ? $select->fetchAll(PDO::FETCH_CLASS, get_called_class()) : $select->fetchAll(PDO::FETCH_ASSOC);
-                file_put_contents($file, '<?php $triton[\'all\'][\''. $file_name .'\'] = \'' . json_encode($result) . '\';');
+                file_put_contents($file, '<?php $triton[\'all\'][\''. $file_name .'\'] = \'' . serialize($result) . '\';');
                 if($type == 'object')
                 {
                     $model = new $called_class;
@@ -138,7 +144,7 @@ class Triton
             $db = self::connectDatabase(static::$db);
             $select = $db->query('SELECT ' . $columns . ' FROM ' . static::$table);
             $result = ($type == 'object') ? $select->fetchAll(PDO::FETCH_CLASS, get_called_class()) : $select->fetchAll(PDO::FETCH_ASSOC);
-            file_put_contents($file, '<?php $triton[\'all\'][\''. $file_name .'\'] = \'' . json_encode($result) . '\';');
+            file_put_contents($file, '<?php $triton[\'all\'][\''. $file_name .'\'] = \'' . serialize($result) . '\';');
             if($type == 'object')
             {
                 $model = new $called_class;
@@ -192,7 +198,7 @@ class Triton
         return $this->variables['data'];
     }
 
-    private static function connectDatabase($dbname)
+    public static function connectDatabase($dbname)
     {
         global $configs, $databases;
 
