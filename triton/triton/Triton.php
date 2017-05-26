@@ -44,7 +44,7 @@ class Triton
         $id = self::$id;
         $class = get_called_class();
         $result = $class::where($classShort . '_id', $this->relation->variables['data'][$id])->execute();
-        return $result;
+        return $result->variables['data'];
     }
 
     public static function where($column, $value, $mark = '=')
@@ -60,7 +60,6 @@ class Triton
     public function __get($name)
     {
         if(method_exists($this, $name)) {
-            var_dump($this->$name());
             return $this->$name();
         }
         else
@@ -118,7 +117,7 @@ class Triton
                 $model = new $called_class;
                 $model->setType('multi');
                 $model->setData(unserialize($triton['all'][$file_name]));
-                return $model;
+                return $model->variables['data'];
             }
             else
             {
@@ -131,7 +130,7 @@ class Triton
                     $model = new $called_class;
                     $model->setType('multi');
                     $model->setData($result);
-                    return $model;
+                    return $model->variables['data'];
                 }
                 else
                 {
@@ -193,10 +192,6 @@ class Triton
         */
     }
 
-    public function getData()
-    {
-        return $this->variables['data'];
-    }
 
     public static function connectDatabase($dbname)
     {

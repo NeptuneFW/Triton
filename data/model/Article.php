@@ -12,7 +12,7 @@ class Article extends \Triton
 {
     protected static
         $db = 'ntblog',
-        $table = 'article';
+        $table = 'articles';
 
     public function user()
     {

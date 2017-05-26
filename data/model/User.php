@@ -6,7 +6,7 @@ class User extends \Triton
 {
     protected static
         $db = 'ntuser',
-        $table = 'user';
+        $table = 'users';
 
     public function articles()
     {

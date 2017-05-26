@@ -18,8 +18,7 @@ foreach (glob('./data/model/*') as  $value)
     }
 }
 
-$users = User::all('*')->getData();
-
+$users = User::all();
 foreach ($users as $user)
 {
     foreach ($user->articles as $article)
