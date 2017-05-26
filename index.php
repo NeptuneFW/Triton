@@ -18,11 +18,9 @@ foreach (glob('./data/model/*') as  $value)
     }
 }
 
-$users = User::all();
-foreach ($users as $user)
+$articles = \Data\Model\Article::all();
+foreach ($articles as $article)
 {
-    foreach ($user->articles as $article)
-    {
-        var_dump($article);
-    }
+    $user = $article->user[0];
+    echo '<h1>' . $article->title . '</h1> <br/> <h5> Yazar : ' . $user->name . ' ' . $user->surname . ' <time> ' . $article->created . ' </time></h5> <br/> ' . html_entity_decode($article->content) . ' <br/>';
 }

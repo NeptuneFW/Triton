@@ -12,4 +12,10 @@ class User extends \Triton
     {
         return $this->hasMany('Data\Model\Article');
     }
+
+    public function likes()
+    {
+        return $this->hasMany('Data\Model\Article');
+    }
+
 }

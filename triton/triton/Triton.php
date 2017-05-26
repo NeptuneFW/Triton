@@ -42,8 +42,14 @@ class Triton
         $reflection =  new \ReflectionClass($class);
         $classShort = strtolower($reflection->getShortName());
         $id = self::$id;
-        $class = get_called_class();
-        $result = $class::where($classShort . '_id', $this->relation->variables['data'][$id])->execute();
+        if(isset($this->relation))
+        {
+            $result = $class::where($classShort . '_id', $this->relation->variables['data'][$id])->execute();
+        }
+        else
+        {
+            $result = $class::where('id', $this->variables['data'][$classShort . '_' . $id])->execute();
+        }
         return $result->variables['data'];
     }
 
