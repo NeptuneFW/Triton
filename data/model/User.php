@@ -15,7 +15,7 @@ class User extends \Triton
 
     public function likes()
     {
-        return $this->hasMany('Data\Model\Article');
+        return $this->hasMany('Data\Model\Like');
     }
 
 }

@@ -45,12 +45,38 @@ class Triton
         if(isset($this->relation))
         {
             $result = $class::where($classShort . '_id', $this->relation->variables['data'][$id])->execute();
+            var_dump($class, $classShort, $this->relation->variables['data'][$id], $id, $result);
         }
         else
         {
             $result = $class::where('id', $this->variables['data'][$classShort . '_' . $id])->execute();
         }
         return $result->variables['data'];
+    }
+
+    public function belongsToMany($class)
+    {
+        if(!isset($this->relation))
+        {
+            $called = get_called_class();
+            $reflection =  new \ReflectionClass($called);
+            $func = strtolower($reflection->getShortName());
+            $class = new $class();
+            $class->setRelation($this);
+            return $class->$func();
+        }
+        else
+        {
+            $reflection = new \ReflectionClass($class);
+            $classShort = strtolower($reflection->getShortName());
+            $id = self::$id;
+            if (isset($this->relation)) {
+                $result = self::where($classShort . '_id', $this->relation->variables['data'][$id])->execute();
+            } else {
+                $result = $class::where('id', $this->variables['data'][$classShort . '_' . $id])->execute();
+            }
+            return $result->variables['data'];
+        }
     }
 
     public static function where($column, $value, $mark = '=')

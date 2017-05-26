@@ -23,6 +23,18 @@ foreach ($articles as $article)
 {
     $user = $article->user[0];
     echo '<h1>' . $article->title . '</h1> <br/> <span> Yazar : ' . $user->name . ' ' . $user->surname . ' <time> ' . $article->created . ' </time></span> <br/> ' . html_entity_decode($article->content) . ' <br/>';
+    echo '<br/>Beğenenler : ';
+    foreach($article->likes as $like)
+    {
+        echo '<br/>' . $like->user[0]->name . ' ' . $like->user[0]->surname;
+    }
+    echo '<br/><br/> Yorumlar';
+    foreach($article->comments as $comment)
+    {
+        echo '<br/>' . $comment->user[0]->name . ' ' . $comment->user[0]->surname . ' <small><time>'. $comment->created .'</time></small>';
+        echo '<br/>' . $comment->text . '<br/>';
+    }
+    echo '<hr/>';
 }
 ?>
 <style>
@@ -69,15 +81,15 @@ foreach ($articles as $article)
     h5,
     h6 {
         /* Change heading typefaces here */
-        font-family: sans-serif;
+        font-family: 'BeaufortforLOL-Regular';
         margin-top: 1.5rem;
         margin-bottom: 0;
         line-height: 1.5rem;
     }
     h1 {
-        font-size: 4.242rem;
-        line-height: 4.5rem;
-        margin-top: 3rem;
+        font-size: 1.942rem;
+        line-height: 1.9rem;
+        margin-top: 1rem;
     }
     h2 {
         font-size: 2.828rem;
@@ -91,7 +103,7 @@ foreach ($articles as $article)
         font-size: 0.707rem;
     }
     h5 {
-        font-size: 0.4713333333333333rem;
+        font-size: 0.8713333333333333rem;
     }
     h6 {
         font-size: 0.3535rem;

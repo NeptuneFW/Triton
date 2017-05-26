@@ -18,4 +18,14 @@ class Article extends \Triton
     {
         return $this->belongsTo('Data\Model\User');
     }
+
+    public function likes()
+    {
+        return $this->belongsToMany('Data\Model\Like');
+    }
+
+    public function comments()
+    {
+        return $this->belongsToMany('Data\Model\Comment');
+    }
 }

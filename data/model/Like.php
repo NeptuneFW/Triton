@@ -9,7 +9,7 @@
 namespace Data\Model;
 
 
-class Likes
+class Like extends \Triton
 {
     protected static
         $db = 'ntblog',
@@ -17,6 +17,11 @@ class Likes
 
     public function user()
     {
-        return $this->hasMany('Data\Model\User');
+        return $this->belongsTo('Data\Model\User');
+    }
+
+    public function article()
+    {
+        return $this->belongsToMany('Data\Model\Article');
     }
 }
