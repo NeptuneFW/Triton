@@ -37,7 +37,11 @@ foreach ($articles as $article)
     echo '<hr/>';
 }
 
-var_dump(User::find(3)->delete());
+$user = User::find(7);
+$user->picture = 'https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/18157157_1118743538230524_7021930993496921834_n.jpg?oh=3ee6cd7a3bbd195a59bec5920d46816d&oe=59AFD988';
+$user->save();
+
+
 
 ?>
 <style>

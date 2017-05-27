@@ -9,7 +9,7 @@
 class Triton
 {
 
-    private $variables = ['data' => [], 'type' => 'single'], $relation;
+    private $variables = ['data' => ['triton' => ['insert' => true]], 'type' => 'single'], $relation;
     protected static $db, $table, $id = 'id', $dataManipulation;
 
     public function setType($type)
@@ -92,10 +92,12 @@ class Triton
                 if(!isset($triton[$file_name])) {
                     require $file;
                 }
+
                 $model = new $called_class;
-                $model->setType('multi');
-                $model->setData(unserialize($triton['find'][$file_name]));
-                return $model->variables['data'];
+                $model->setType('single');
+                $model->setData(unserialize($triton['find'][$file_name])[0]->variables['data']);
+                $model->noInsert();
+                return $model;
             }
             else
             {
@@ -107,8 +109,9 @@ class Triton
                 {
                     $model = new $called_class;
                     $model->setType('single');
-                    $model->setData($result[0]);
-                    return $model->variables['data'];
+                    $model->setData($result[0]->variables['data']);
+                    $model->noInsert();
+                    return $model;
                 }
                 else
                 {
@@ -126,7 +129,8 @@ class Triton
             {
                 $model = new $called_class;
                 $model->setType('single');
-                $model->setData($result[0]);
+                $model->setData($result[0]->variables['data']);
+                $model->noInsert();
                 return $model;
             }
             else
@@ -190,7 +194,11 @@ class Triton
 
     public function __set($name, $value)
     {
-        $this->variables['data'][$name] = $value;
+        if($this->variables['type'] == 'single')
+        {
+            $this->variables['data'][$name] = $value;
+            $this->variables['changed'][$name] = $name;
+        }
     }
 
     function __toString()
@@ -267,36 +275,63 @@ class Triton
 
     public static function add($data)
     {
-        static::$dataManipulation['add'][] = $data;
-    }
-
-    public function save()
-    {
-        error_reporting(E_ALL);
-
-    }
-
-    public function __destruct()
-    {
-        $GLOBALS['_neptune']['databases'] = null;
-        /*
-        if (empty($GLOBALS['_neptune']['databases']))
-        {
-            require __DIR__ . '/../config/start.triton.php';
-        }
+        $db = self::connectDatabase(static::$db);
         $column = '';
         foreach (array_keys($data) as $columnname)
         {
             $column .= $columnname . ' = ?, ';
         }
         $column = rtrim($column, ', ');
-        $insert = $GLOBALS['_neptune']['databases'][static::$db]->prepare('INSERT INTO ' . static::$table . ' SET ' . $column);
+        $insert = $db->prepare('INSERT INTO ' . static::$table . ' SET ' . $column);
         $result = $insert->execute(array_values($data));
         if($result !== false)
         {
-            return $GLOBALS['_neptune']['databases'][static::$db]->lastInsertId();
+            return $db->lastInsertId();
         }
-        */
+    }
+
+    private function noInsert()
+    {
+        $this->variables['data']['triton']['insert'] = false;
+    }
+
+
+    public function save()
+    {
+        $db = self::connectDatabase(static::$db);
+        $column = '';
+        $data = [];
+        if($this->variables['type'] == 'single') {
+            if ($this->variables['data']['triton']['insert']) {
+                foreach ($this->variables['changed'] as $columnname) {
+                    $column .= $columnname . ' = ?, ';
+                    $data[] = $this->variables['data'][$columnname];
+                }
+                $column = rtrim($column, ', ');
+                $insert = $db->prepare('INSERT INTO ' . static::$table . ' SET ' . $column);
+                $result = $insert->execute(array_values($data));
+                if ($result !== false) {
+                    return $db->lastInsertId();
+                }
+            } else {
+                foreach ($this->variables['changed'] as $columnname) {
+                    $column .= $columnname . ' = ?, ';
+                    $data[] = $this->variables['data'][$columnname];
+                }
+                $column = rtrim($column, ', ');
+                $insert = $db->prepare('UPDATE ' . static::$table . ' SET ' . $column);
+                $result = $insert->execute(array_values($data));
+                if ($result !== false) {
+                    return $db->lastInsertId();
+                }
+            }
+            return false;
+        }
+    }
+
+    public function __destruct()
+    {
+        $GLOBALS['_neptune']['databases'] = null;
     }
 
 

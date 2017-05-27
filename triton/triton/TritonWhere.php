@@ -101,7 +101,6 @@ class TritonWhere
             $selectWhere->execute($bind);
 
             $result = ($type == 'object') ? $selectWhere->fetchAll(PDO::FETCH_CLASS, $this->called) : $selectWhere->fetchAll(PDO::FETCH_ASSOC);
-            var_dump($result);
             file_put_contents($file, '<?php $triton[\'where\'][\'execute\'][\'' . $file_name . '\'] = \'' . serialize($result) . '\';');
             if ($type == 'object')
             {
