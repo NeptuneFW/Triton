@@ -79,6 +79,81 @@ class Triton
         }
     }
 
+    public static function find($id, $columns = '*', $type = 'object')
+    {
+        $directory = TRITON_ROOT . '/temp';
+        $file_name = md5(__FUNCTION__ . $id . $columns . $type);
+        $file = $directory . DIRECTORY_SEPARATOR . $file_name . '.php';
+        $called_class = get_called_class();
+        if(file_exists($file))
+        {
+            if(filectime($file) == time() and filemtime($file) == time())
+            {
+                if(!isset($triton[$file_name])) {
+                    require $file;
+                }
+                $model = new $called_class;
+                $model->setType('multi');
+                $model->setData(unserialize($triton['find'][$file_name]));
+                return $model->variables['data'];
+            }
+            else
+            {
+                $db = self::connectDatabase(static::$db);
+                $select = $db->query('SELECT ' . $columns . ' FROM ' . static::$table . ' WHERE ' . static::$id . ' = \'' . $id . '\'');
+                $result = ($type == 'object') ? $select->fetchAll(PDO::FETCH_CLASS, get_called_class()) : $select->fetchAll(PDO::FETCH_ASSOC);
+                file_put_contents($file, '<?php $triton[\'find\'][\''. $file_name .'\'] = \'' . serialize($result) . '\';');
+                if($type == 'object')
+                {
+                    $model = new $called_class;
+                    $model->setType('single');
+                    $model->setData($result[0]);
+                    return $model->variables['data'];
+                }
+                else
+                {
+                    return  $result;
+                }
+            }
+        }
+        else
+        {
+            $db = self::connectDatabase(static::$db);
+            $select = $db->query('SELECT ' . $columns . ' FROM ' . static::$table . ' WHERE ' . static::$id . ' = \'' . $id . '\'');
+            $result = ($type == 'object') ? $select->fetchAll(PDO::FETCH_CLASS, get_called_class()) : $select->fetchAll(PDO::FETCH_ASSOC);
+            file_put_contents($file, '<?php $triton[\'find\'][\''. $file_name .'\'] = \'' . serialize($result) . '\';');
+            if($type == 'object')
+            {
+                $model = new $called_class;
+                $model->setType('single');
+                $model->setData($result[0]);
+                return $model;
+            }
+            else
+            {
+                return  $result;
+            }
+        }
+    }
+
+    public function delete()
+    {
+        if(isset($this->variables['data'][static::$id]))
+        {
+            $db = self::connectDatabase(static::$db);
+            $select = $db->prepare('DELETE FROM ' . static::$table . ' WHERE ' . static::$id . ' = :id');
+            $result = $select->execute(['id' => $this->variables['data'][static::$id]]);
+            if($result !== false)
+            {
+                return true;
+            }
+            else
+            {
+                return  false;
+            }
+        }
+    }
+
     public static function where($column, $value, $mark = '=')
     {
         $class = new TritonWhere(self::class);

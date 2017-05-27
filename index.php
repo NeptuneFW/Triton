@@ -36,6 +36,9 @@ foreach ($articles as $article)
     }
     echo '<hr/>';
 }
+
+var_dump(User::find(3)->delete());
+
 ?>
 <style>
     /*! Typebase.less v0.1.0 | MIT License */
