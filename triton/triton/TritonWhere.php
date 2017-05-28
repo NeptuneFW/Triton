@@ -41,7 +41,8 @@ class TritonWhere
                 $model->setData(json_decode($triton['where']['execute'][$file_name]));
                 return $model;
             } else {
-                $db = $this->class::connectDatabase($this->database);
+                $class = $this->class;
+                $db = $class::connectDatabase($this->database);
                 $bind = [];
                 $selectQuery = 'SELECT ' . $columns . ' FROM ' . $this->table . ' WHERE ' . $this->data['first'][0] . " " . $this->data['first'][2] . ":first ";
                 $bind['first'] = $this->data['first'][1];
@@ -76,7 +77,8 @@ class TritonWhere
                 }
             }
         } else {
-            $db = $this->class::connectDatabase($this->database);
+            $class = $this->class;
+            $db = $class::connectDatabase($this->database);
             $bind = [];
             $selectQuery = 'SELECT ' . $columns . ' FROM ' . $this->table . ' WHERE ' . $this->data['first'][0] . " " . $this->data['first'][2] . ":first ";
             $bind['first'] = $this->data['first'][1];

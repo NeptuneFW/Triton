@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="563334f5-5bdc-4a66-a330-9fb2f81f3794" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/triton/temp/c058d9abe67382510bc6a0a3fe1e44f7.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/triton/triton/Triton.php" afterPath="$PROJECT_DIR$/triton/triton/Triton.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/triton/triton/TritonWhere.php" afterPath="$PROJECT_DIR$/triton/triton/TritonWhere.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +18,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Triton.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Triton.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/triton/triton/Triton.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="373">
@@ -57,13 +54,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TritonWhere.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TritonWhere.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/triton/triton/TritonWhere.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="103" column="30" lean-forward="false" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
+            <state relative-caret-position="-598">
+              <caret line="80" column="59" lean-forward="false" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
               <folding>
-                <marker date="1495969845410" expanded="true" signature="3274:3350" ph="SELECT * FRO... categories" />
+                <marker date="1495970304430" expanded="true" signature="3336:3412" ph="SELECT * FRO... categories" />
               </folding>
             </state>
           </provider>
@@ -136,6 +133,7 @@
       <find>var</find>
       <find>find(</find>
       <find>all</find>
+      <find>all(</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,8 +169,8 @@
         <option value="$PROJECT_DIR$/data/model/Comment.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/data/model/User.php" />
-        <option value="$PROJECT_DIR$/triton/triton/TritonWhere.php" />
         <option value="$PROJECT_DIR$/triton/triton/Triton.php" />
+        <option value="$PROJECT_DIR$/triton/triton/TritonWhere.php" />
       </list>
     </option>
   </component>
@@ -446,14 +444,7 @@
       <workItem from="1495840480594" duration="10000" />
       <workItem from="1495914557673" duration="7535000" />
       <workItem from="1495926331647" duration="2717000" />
-      <workItem from="1495965510476" duration="4659000" />
-    </task>
-    <task id="LOCAL-00004" summary="Development">
-      <created>1494713289198</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1494713289198</updated>
+      <workItem from="1495965510476" duration="4723000" />
     </task>
     <task id="LOCAL-00005" summary="Development">
       <created>1494713351367</created>
@@ -791,11 +782,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495921800353</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Development">
+      <created>1495970261604</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1495970261606</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91307000" />
+    <option name="totallyTimeSpent" value="91371000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1160,16 +1158,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/triton/triton/TritonWhere.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="103" column="30" lean-forward="false" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
-          <folding>
-            <marker date="1495969845410" expanded="true" signature="3274:3350" ph="SELECT * FRO... categories" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/triton/triton/Triton.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -1200,6 +1188,16 @@
             <marker date="1495970207315" expanded="true" signature="9315:9382" ph="DELETE FROM " />
             <marker date="1495970207315" expanded="true" signature="11335:11374" ph="INSERT INTO ${static::$table}... " />
             <marker date="1495970207315" expanded="true" signature="11888:11916" ph="INSERT INTO ${static::$table}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/triton/triton/TritonWhere.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-598">
+          <caret line="80" column="59" lean-forward="false" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
+          <folding>
+            <marker date="1495970304430" expanded="true" signature="3336:3412" ph="SELECT * FRO... categories" />
           </folding>
         </state>
       </provider>
