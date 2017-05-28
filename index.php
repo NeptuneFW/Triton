@@ -19,28 +19,20 @@ foreach (glob('./data/model/*') as  $value)
 }
 
 $articles = \Data\Model\Article::all();
-foreach ($articles as $article)
-{
+foreach ($articles as $article) {
     $user = $article->user[0];
     echo '<h1>' . $article->title . '</h1> <br/> <span> Yazar : ' . $user->name . ' ' . $user->surname . ' <time> ' . $article->created . ' </time></span> <br/> ' . html_entity_decode($article->content) . ' <br/>';
     echo '<br/>Beğenenler : ';
-    foreach($article->likes as $like)
-    {
+    foreach ($article->likes as $like) {
         echo '<br/>' . $like->user[0]->name . ' ' . $like->user[0]->surname;
     }
     echo '<br/><br/> Yorumlar';
-    foreach($article->comments as $comment)
-    {
-        echo '<br/>' . $comment->user[0]->name . ' ' . $comment->user[0]->surname . ' <small><time>'. $comment->created .'</time></small>';
+    foreach ($article->comments as $comment) {
+        echo '<br/>' . $comment->user[0]->name . ' ' . $comment->user[0]->surname . ' <small><time>' . $comment->created . '</time></small>';
         echo '<br/>' . $comment->text . '<br/>';
     }
     echo '<hr/>';
 }
-
-$user = User::find(7);
-$user->picture = 'https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/18157157_1118743538230524_7021930993496921834_n.jpg?oh=3ee6cd7a3bbd195a59bec5920d46816d&oe=59AFD988';
-$user->save();
-
 
 
 ?>
